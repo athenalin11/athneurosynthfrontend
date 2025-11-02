@@ -1,0 +1,108 @@
+/* 全局響應式基礎設定 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  line-height: 1.65;
+  font-weight: 400;
+  font-size: 16px; /* 增加基礎字體大小 */
+
+  color-scheme: dark;
+  color: rgba(224, 247, 255, 0.95);
+  background-color: #0a1828;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  /* 防止水平滾動 */
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  /* 防止水平滾動 */
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  /* 觸控設備優化 */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* 確保所有容器不會超出視窗 */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 圖片響應式 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Canvas 響應式 */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+  display: block;
+}
+
+/* 表格響應式 */
+table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* 平板橫向 */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* 手機橫向優化 */
+@media (max-width: 767px) and (orientation: landscape) {
+  .app__header {
+    padding: 12px 20px !important;
+  }
+  
+  .app__title {
+    font-size: 16px !important;
+  }
+  
+  .app__subtitle {
+    font-size: 9px !important;
+  }
+}
+
+/* 超小螢幕 */
+@media (max-width: 374px) {
+  body {
+    font-size: 13px;
+  }
+}
+
+/* 防止文字選取（觸控設備） */
+@media (hover: none) and (pointer: coarse) {
+  button, .btn, [role="button"] {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+
